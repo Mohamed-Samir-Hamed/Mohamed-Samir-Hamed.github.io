@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Mohamed Samir | Data Analyst Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet"/>
-<style>
+  <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
@@ -14,7 +14,6 @@
       color: #e0e0e0;
     }
 
-    /* NAV */
     nav {
       display: flex;
       justify-content: space-between;
@@ -26,25 +25,11 @@
       z-index: 100;
       border-bottom: 1px solid #1e3a5f;
     }
-    nav .logo {
-      font-size: 1.4rem;
-      font-weight: 700;
-      color: #4f9ef8;
-    }
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 30px;
-    }
-    nav ul a {
-      color: #e0e0e0;
-      text-decoration: none;
-      font-size: 0.95rem;
-      transition: color 0.3s;
-    }
+    nav .logo { font-size: 1.4rem; font-weight: 700; color: #4f9ef8; }
+    nav ul { list-style: none; display: flex; gap: 30px; }
+    nav ul a { color: #e0e0e0; text-decoration: none; font-size: 0.95rem; transition: color 0.3s; }
     nav ul a:hover { color: #4f9ef8; }
 
-    /* HERO */
     .hero {
       display: flex;
       flex-direction: column;
@@ -54,69 +39,23 @@
       padding: 100px 20px;
       background: linear-gradient(135deg, #0d1526 0%, #070b14 100%);
     }
-    .hero h1 {
-      font-size: 3rem;
-      font-weight: 700;
-      color: #ffffff;
-    }
+    .hero h1 { font-size: 3rem; font-weight: 700; color: #ffffff; }
     .hero h1 span { color: #4f9ef8; }
-    .hero p {
-      margin-top: 20px;
-      font-size: 1.1rem;
-      color: #8899aa;
-      max-width: 600px;
-      line-height: 1.8;
-    }
-    .hero .btns {
-      margin-top: 35px;
-      display: flex;
-      gap: 15px;
-    }
-    .btn {
-      padding: 12px 28px;
-      border-radius: 8px;
-      font-size: 0.95rem;
-      font-weight: 600;
-      text-decoration: none;
-      transition: all 0.3s;
-    }
-    .btn-primary {
-      background: #4f9ef8;
-      color: #070b14;
-    }
+    .hero p { margin-top: 20px; font-size: 1.1rem; color: #8899aa; max-width: 600px; line-height: 1.8; }
+    .hero .btns { margin-top: 35px; display: flex; gap: 15px; }
+
+    .btn { padding: 12px 28px; border-radius: 8px; font-size: 0.95rem; font-weight: 600; text-decoration: none; transition: all 0.3s; }
+    .btn-primary { background: #4f9ef8; color: #070b14; }
     .btn-primary:hover { background: #3a8de0; }
-    .btn-secondary {
-      border: 2px solid #4f9ef8;
-      color: #4f9ef8;
-    }
-    .btn-secondary:hover {
-      background: #4f9ef8;
-      color: #070b14;
-    }
+    .btn-secondary { border: 2px solid #4f9ef8; color: #4f9ef8; }
+    .btn-secondary:hover { background: #4f9ef8; color: #070b14; }
 
-    /* SECTIONS */
     .section { padding: 80px 60px; }
-    .section h2 {
-      font-size: 2rem;
-      font-weight: 700;
-      color: #ffffff;
-      margin-bottom: 10px;
-    }
+    .section h2 { font-size: 2rem; font-weight: 700; color: #ffffff; margin-bottom: 10px; }
     .section h2 span { color: #4f9ef8; }
-    .divider {
-      width: 60px;
-      height: 4px;
-      background: #4f9ef8;
-      border-radius: 2px;
-      margin-bottom: 40px;
-    }
+    .divider { width: 60px; height: 4px; background: #4f9ef8; border-radius: 2px; margin-bottom: 40px; }
 
-    /* SKILLS */
-    .skills-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 15px;
-    }
+    .skills-grid { display: flex; flex-wrap: wrap; gap: 15px; }
     .skill-badge {
       background: #0d1526;
       border: 1px solid #4f9ef8;
@@ -127,12 +66,7 @@
       font-weight: 600;
     }
 
-    /* PROJECTS */
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 25px;
-    }
+    .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
     .project-card {
       background: #0d1526;
       border-radius: 12px;
@@ -140,84 +74,25 @@
       border: 1px solid #1e3a5f;
       transition: transform 0.3s, border-color 0.3s;
     }
-    .project-card:hover {
-      transform: translateY(-5px);
-      border-color: #4f9ef8;
-    }
-    .project-card .icon {
-      font-size: 2.5rem;
-      margin-bottom: 15px;
-    }
-    .project-card h3 {
-      font-size: 1.1rem;
-      font-weight: 700;
-      color: #ffffff;
-      margin-bottom: 10px;
-    }
-    .project-card p {
-      font-size: 0.9rem;
-      color: #8899aa;
-      line-height: 1.7;
-      margin-bottom: 20px;
-    }
-    .project-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-bottom: 20px;
-    }
-    .tag {
-      background: #070b14;
-      color: #4f9ef8;
-      padding: 4px 12px;
-      border-radius: 4px;
-      font-size: 0.8rem;
-    }
-    .project-links {
-      display: flex;
-      gap: 10px;
-    }
-    .project-links a {
-      padding: 8px 16px;
-      border-radius: 6px;
-      font-size: 0.85rem;
-      font-weight: 600;
-      text-decoration: none;
-      transition: all 0.3s;
-    }
-    .link-demo {
-      background: #4f9ef8;
-      color: #070b14;
-    }
-    .link-demo:hover { background: #3a8de0; }
-    .link-github {
-      border: 1px solid #1e3a5f;
-      color: #8899aa;
-    }
-    .link-github:hover {
-      border-color: #4f9ef8;
-      color: #4f9ef8;
-    }
+    .project-card:hover { transform: translateY(-5px); border-color: #4f9ef8; }
+    .project-card .icon { font-size: 2.5rem; margin-bottom: 15px; }
+    .project-card h3 { font-size: 1.1rem; font-weight: 700; color: #ffffff; margin-bottom: 10px; }
+    .project-card p { font-size: 0.9rem; color: #8899aa; line-height: 1.7; margin-bottom: 20px; }
 
-    /* ABOUT */
+    .project-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
+    .tag { background: #070b14; color: #4f9ef8; padding: 4px 12px; border-radius: 4px; font-size: 0.8rem; }
+
+    .project-links { display: flex; gap: 10px; }
+    .project-links a { padding: 8px 16px; border-radius: 6px; font-size: 0.85rem; font-weight: 600; text-decoration: none; transition: all 0.3s; }
+    .link-demo { background: #4f9ef8; color: #070b14; }
+    .link-demo:hover { background: #3a8de0; }
+    .link-github { border: 1px solid #1e3a5f; color: #8899aa; }
+    .link-github:hover { border-color: #4f9ef8; color: #4f9ef8; }
+
     .about-section { background: #0d1526; }
-    .about-content {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 60px;
-      align-items: center;
-    }
-    .about-text p {
-      color: #8899aa;
-      line-height: 1.9;
-      font-size: 1rem;
-      margin-bottom: 15px;
-    }
-    .about-info {
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-    }
+    .about-content { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+    .about-text p { color: #8899aa; line-height: 1.9; font-size: 1rem; margin-bottom: 15px; }
+    .about-info { display: flex; flex-direction: column; gap: 15px; }
     .info-item {
       display: flex;
       align-items: center;
@@ -228,22 +103,10 @@
       border-left: 3px solid #4f9ef8;
     }
     .info-item span:first-child { font-size: 1.3rem; }
-    .info-item .label {
-      font-size: 0.8rem;
-      color: #556677;
-    }
-    .info-item .value {
-      font-size: 0.95rem;
-      color: #ffffff;
-      font-weight: 600;
-    }
+    .info-item .label { font-size: 0.8rem; color: #556677; }
+    .info-item .value { font-size: 0.95rem; color: #ffffff; font-weight: 600; }
 
-    /* CONTACT */
-    .contact-grid {
-      display: flex;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
+    .contact-grid { display: flex; gap: 20px; flex-wrap: wrap; }
     .contact-card {
       background: #0d1526;
       border-radius: 10px;
@@ -255,18 +118,10 @@
       flex: 1;
       min-width: 150px;
     }
-    .contact-card:hover {
-      border-color: #4f9ef8;
-      transform: translateY(-3px);
-    }
+    .contact-card:hover { border-color: #4f9ef8; transform: translateY(-3px); }
     .contact-card .icon { font-size: 2rem; margin-bottom: 10px; }
-    .contact-card p {
-      color: #4f9ef8;
-      font-weight: 600;
-      font-size: 0.95rem;
-    }
+    .contact-card p { color: #4f9ef8; font-weight: 600; font-size: 0.95rem; }
 
-    /* FOOTER */
     footer {
       text-align: center;
       padding: 30px;
@@ -284,7 +139,7 @@
       .hero h1 { font-size: 2rem; }
       .about-content { grid-template-columns: 1fr; }
     }
-</style>
+  </style>
 </head>
 <body>
 
@@ -329,7 +184,7 @@
   </section>
 
   <!-- PROJECTS -->
-  <section class="section" id="projects" style="background:#0d0f1a;">
+  <section class="section" id="projects" style="background:#060a12;">
     <h2>My <span>Projects</span></h2>
     <div class="divider"></div>
     <div class="projects-grid">
