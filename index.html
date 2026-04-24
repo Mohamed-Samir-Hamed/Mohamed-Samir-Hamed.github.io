@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mohamed Samir | Data Analyst Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #0f1117;
+      color: #e0e0e0;
+    }
+
+    /* NAV */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 60px;
+      background: #1a1d2e;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    nav .logo {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #f4a825;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+    }
+    nav ul a {
+      color: #e0e0e0;
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: color 0.3s;
+    }
+    nav ul a:hover { color: #f4a825; }
+
+    /* HERO */
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 100px 20px;
+      background: linear-gradient(135deg, #1a1d2e 0%, #0f1117 100%);
+    }
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      color: #ffffff;
+    }
+    .hero h1 span { color: #f4a825; }
+    .hero p {
+      margin-top: 20px;
+      font-size: 1.1rem;
+      color: #aaaaaa;
+      max-width: 600px;
+      line-height: 1.8;
+    }
+    .hero .btns {
+      margin-top: 35px;
+      display: flex;
+      gap: 15px;
+    }
+    .btn {
+      padding: 12px 28px;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+    .btn-primary {
+      background: #f4a825;
+      color: #0f1117;
+    }
+    .btn-primary:hover { background: #e09520; }
+    .btn-secondary {
+      border: 2px solid #f4a825;
+      color: #f4a825;
+    }
+    .btn-secondary:hover {
+      background: #f4a825;
+      color: #0f1117;
+    }
+
+    /* SECTIONS */
+    .section { padding: 80px 60px; }
+    .section h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 10px;
+    }
+    .section h2 span { color: #f4a825; }
+    .divider {
+      width: 60px;
+      height: 4px;
+      background: #f4a825;
+      border-radius: 2px;
+      margin-bottom: 40px;
+    }
+
+    /* SKILLS */
+    .skills-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+    .skill-badge {
+      background: #1a1d2e;
+      border: 1px solid #f4a825;
+      color: #f4a825;
+      padding: 8px 20px;
+      border-radius: 25px;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    /* PROJECTS */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
+    }
+    .project-card {
+      background: #1a1d2e;
+      border-radius: 12px;
+      padding: 30px;
+      border: 1px solid #2a2d3e;
+      transition: transform 0.3s, border-color 0.3s;
+    }
+    .project-card:hover {
+      transform: translateY(-5px);
+      border-color: #f4a825;
+    }
+    .project-card .icon {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+    }
+    .project-card h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 10px;
+    }
+    .project-card p {
+      font-size: 0.9rem;
+      color: #aaaaaa;
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+    .tag {
+      background: #0f1117;
+      color: #f4a825;
+      padding: 4px 12px;
+      border-radius: 4px;
+      font-size: 0.8rem;
+    }
+    .project-links {
+      display: flex;
+      gap: 10px;
+    }
+    .project-links a {
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+    .link-demo {
+      background: #f4a825;
+      color: #0f1117;
+    }
+    .link-demo:hover { background: #e09520; }
+    .link-github {
+      border: 1px solid #555;
+      color: #aaaaaa;
+    }
+    .link-github:hover {
+      border-color: #f4a825;
+      color: #f4a825;
+    }
+
+    /* ABOUT */
+    .about-section { background: #1a1d2e; }
+    .about-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+    .about-text p {
+      color: #aaaaaa;
+      line-height: 1.9;
+      font-size: 1rem;
+      margin-bottom: 15px;
+    }
+    .about-info {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    .info-item {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      background: #0f1117;
+      padding: 15px 20px;
+      border-radius: 8px;
+      border-left: 3px solid #f4a825;
+    }
+    .info-item span:first-child { font-size: 1.3rem; }
+    .info-item .label {
+      font-size: 0.8rem;
+      color: #888;
+    }
+    .info-item .value {
+      font-size: 0.95rem;
+      color: #ffffff;
+      font-weight: 600;
+    }
+
+    /* CONTACT */
+    .contact-grid {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .contact-card {
+      background: #1a1d2e;
+      border-radius: 10px;
+      padding: 25px 35px;
+      text-align: center;
+      border: 1px solid #2a2d3e;
+      text-decoration: none;
+      transition: border-color 0.3s, transform 0.3s;
+      flex: 1;
+      min-width: 150px;
+    }
+    .contact-card:hover {
+      border-color: #f4a825;
+      transform: translateY(-3px);
+    }
+    .contact-card .icon { font-size: 2rem; margin-bottom: 10px; }
+    .contact-card p {
+      color: #f4a825;
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 30px;
+      background: #1a1d2e;
+      color: #555;
+      font-size: 0.85rem;
+    }
+    footer span { color: #f4a825; }
+
+    @media (max-width: 768px) {
+      nav { padding: 15px 20px; }
+      nav ul { gap: 15px; }
+      .section { padding: 60px 20px; }
+      .hero h1 { font-size: 2rem; }
+      .about-content { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="logo">Mohamed Samir.</div>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <h1>Hi, I'm <span>Mohamed Samir</span> 👋</h1>
+    <p>Data Analyst & Power BI Developer — transforming raw data into
+    clear, actionable insights through interactive dashboards and
+    professional business intelligence solutions.</p>
+    <div class="btns">
+      <a href="#projects" class="btn btn-primary">View My Work</a>
+      <a href="#contact" class="btn btn-secondary">Contact Me</a>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section class="section" id="skills">
+    <h2>My <span>Skills</span></h2>
+    <div class="divider"></div>
+    <div class="skills-grid">
+      <span class="skill-badge">⚡ Power BI</span>
+      <span class="skill-badge">📐 DAX</span>
+      <span class="skill-badge">🐍 Python</span>
+      <span class="skill-badge">🗄️ SQL</span>
+      <span class="skill-badge">📊 Excel</span>
+      <span class="skill-badge">🔄 Power Query</span>
+      <span class="skill-badge">📈 Data Visualization</span>
+      <span class="skill-badge">🧠 Business Intelligence</span>
+      <span class="skill-badge">🗃️ Data Modeling</span>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section class="section" id="projects" style="background:#0d0f1a;">
+    <h2>My <span>Projects</span></h2>
+    <div class="divider"></div>
+    <div class="projects-grid">
+
+      <div class="project-card">
+        <div class="icon">📊</div>
+        <h3>Sales & Sentiment Intelligence Dashboard</h3>
+        <p>Multi-page Power BI dashboard integrating sales KPIs, product
+        performance, and customer sentiment analysis with DAX and dark
+        enterprise theme.</p>
+        <div class="project-tags">
+          <span class="tag">Power BI</span>
+          <span class="tag">DAX</span>
+          <span class="tag">Sentiment Analysis</span>
+        </div>
+        <div class="project-links">
+          <a href="https://app.powerbi.com/view?r=eyJrIjoiN2NiN2NhYjQtZTlhOC00NDg0LTgwNTAtNmYyOTA0YjEwODMzIiwidCI6IjJiYjZlNWJjLWMxMDktNDdmYi05NDMzLWMxYzZmNGZhMzNmZiIsImMiOjl9&pageName=60f0053548670e652b0b" target="_blank" class="link-demo">▶ Live Demo</a>
+          <a href="https://github.com/Mohamed-Samir-Hamed/Sales-Sentiment-PowerBI-Dashboard" target="_blank" class="link-github">GitHub</a>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="icon">🦠</div>
+        <h3>COVID-19 Global Analysis Dashboard</h3>
+        <p>Interactive Power BI dashboard tracking global confirmed cases,
+        deaths, recoveries with world map visualization and time-series
+        trend analysis.</p>
+        <div class="project-tags">
+          <span class="tag">Power BI</span>
+          <span class="tag">DAX</span>
+          <span class="tag">Time Series</span>
+        </div>
+        <div class="project-links">
+          <a href="https://app.powerbi.com/view?r=eyJrIjoiOTliOWIzNDctNjAwZS00Y2FlLTg2ZjAtYjcxZTFmMmZkYTU2IiwidCI6IjJiYjZlNWJjLWMxMDktNDdmYi05NDMzLWMxYzZmNGZhMzNmZiIsImMiOjl9" target="_blank" class="link-demo">▶ Live Demo</a>
+          <a href="https://github.com/Mohamed-Samir-Hamed/COVID-19-Analysis-Dashboard" target="_blank" class="link-github">GitHub</a>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="icon">👥</div>
+        <h3>HR Analytics & Workforce Intelligence Dashboard</h3>
+        <p>Power BI HR dashboard covering employee attrition, salary
+        distribution, performance ratings, and workforce headcount
+        with department-level analysis.</p>
+        <div class="project-tags">
+          <span class="tag">Power BI</span>
+          <span class="tag">DAX</span>
+          <span class="tag">HR Analytics</span>
+        </div>
+        <div class="project-links">
+          <a href="https://app.powerbi.com/view?r=eyJrIjoiNWI2M2FhNDItYjM1Ny00MzNiLTg0YWEtOTQ0MGFiMmViMGY2IiwidCI6IjJiYjZlNWJjLWMxMDktNDdmYi05NDMzLWMxYzZmNGZhMzNmZiIsImMiOjl9" target="_blank" class="link-demo">▶ Live Demo</a>
+          <a href="https://github.com/Mohamed-Samir-Hamed/HR-Analytics-Dashboard" target="_blank" class="link-github">GitHub</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="section about-section" id="about">
+    <h2>About <span>Me</span></h2>
+    <div class="divider"></div>
+    <div class="about-content">
+      <div class="about-text">
+        <p>I'm a Computer Science student with a Diploma in Data Analysis
+        from Instant Software Solution, passionate about turning complex
+        data into clear, actionable business insights.</p>
+        <p>I specialize in building professional Power BI dashboards with
+        custom DAX measures, dark enterprise themes, and interactive
+        visualizations that help businesses make better decisions.</p>
+      </div>
+      <div class="about-info">
+        <div class="info-item">
+          <span>🎓</span>
+          <div>
+            <div class="label">Education</div>
+            <div class="value">Computer Science Student</div>
+          </div>
+        </div>
+        <div class="info-item">
+          <span>📜</span>
+          <div>
+            <div class="label">Diploma</div>
+            <div class="value">Data Analysis — Instant Software Solution</div>
+          </div>
+        </div>
+        <div class="info-item">
+          <span>📍</span>
+          <div>
+            <div class="label">Location</div>
+            <div class="value">Giza, Egypt</div>
+          </div>
+        </div>
+        <div class="info-item">
+          <span>💼</span>
+          <div>
+            <div class="label">Focus</div>
+            <div class="value">Power BI & Business Intelligence</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section" id="contact">
+    <h2>Contact <span>Me</span></h2>
+    <div class="divider"></div>
+    <div class="contact-grid">
+      <a href="mailto:mohamed.s.h.official@gmail.com" class="contact-card">
+        <div class="icon">📧</div>
+        <p>Email</p>
+      </a>
+      <a href="https://www.linkedin.com/in/mohamed-samir-h0/" target="_blank" class="contact-card">
+        <div class="icon">💼</div>
+        <p>LinkedIn</p>
+      </a>
+      <a href="https://github.com/Mohamed-Samir-Hamed" target="_blank" class="contact-card">
+        <div class="icon">🐙</div>
+        <p>GitHub</p>
+      </a>
+      <a href="https://www.kaggle.com/mohamed00s" target="_blank" class="contact-card">
+        <div class="icon">📊</div>
+        <p>Kaggle</p>
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>Designed & Built by <span>Mohamed Samir</span> — Data Analyst & Power BI Developer</p>
+  </footer>
+
+</body>
+</html>
