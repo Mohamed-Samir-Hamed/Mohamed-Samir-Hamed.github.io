@@ -2,60 +2,98 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="description" content="Mohamed Samir — Data Analyst & Power BI Developer Portfolio"/>
   <title>Mohamed Samir | Data Analyst Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet"/>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
+    html { scroll-behavior: smooth; }
+
     body {
       font-family: 'Inter', sans-serif;
       background-color: #070b14;
       color: #e0e0e0;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
 
+    /* NAV */
     nav {
+      display: -webkit-flex;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 20px 60px;
+      padding: 18px 60px;
       background: #0d1526;
       position: sticky;
       top: 0;
-      z-index: 100;
+      z-index: 1000;
       border-bottom: 1px solid #1e3a5f;
     }
     nav .logo { font-size: 1.4rem; font-weight: 700; color: #4f9ef8; }
-    nav ul { list-style: none; display: flex; gap: 30px; }
-    nav ul a { color: #e0e0e0; text-decoration: none; font-size: 0.95rem; transition: color 0.3s; }
+    nav ul { list-style: none; display: -webkit-flex; display: flex; gap: 30px; }
+    nav ul a { color: #e0e0e0; text-decoration: none; font-size: 0.95rem; -webkit-transition: color 0.3s; transition: color 0.3s; }
     nav ul a:hover { color: #4f9ef8; }
 
+    /* HAMBURGER */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 5px;
+    }
+    .hamburger span {
+      width: 25px;
+      height: 3px;
+      background: #4f9ef8;
+      border-radius: 3px;
+      -webkit-transition: all 0.3s;
+      transition: all 0.3s;
+    }
+
+    /* HERO */
     .hero {
+      display: -webkit-flex;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       text-align: center;
       padding: 100px 20px;
+      background: -webkit-linear-gradient(135deg, #0d1526 0%, #070b14 100%);
       background: linear-gradient(135deg, #0d1526 0%, #070b14 100%);
     }
-    .hero h1 { font-size: 3rem; font-weight: 700; color: #ffffff; }
+    .hero h1 { font-size: 3rem; font-weight: 700; color: #ffffff; line-height: 1.2; }
     .hero h1 span { color: #4f9ef8; }
     .hero p { margin-top: 20px; font-size: 1.1rem; color: #8899aa; max-width: 600px; line-height: 1.8; }
-    .hero .btns { margin-top: 35px; display: flex; gap: 15px; }
+    .hero .btns { margin-top: 35px; display: -webkit-flex; display: flex; gap: 15px; flex-wrap: wrap; justify-content: center; }
 
-    .btn { padding: 12px 28px; border-radius: 8px; font-size: 0.95rem; font-weight: 600; text-decoration: none; transition: all 0.3s; }
+    .btn {
+      padding: 12px 28px;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-decoration: none;
+      -webkit-transition: all 0.3s;
+      transition: all 0.3s;
+      display: inline-block;
+    }
     .btn-primary { background: #4f9ef8; color: #070b14; }
     .btn-primary:hover { background: #3a8de0; }
     .btn-secondary { border: 2px solid #4f9ef8; color: #4f9ef8; }
     .btn-secondary:hover { background: #4f9ef8; color: #070b14; }
 
+    /* SECTIONS */
     .section { padding: 80px 60px; }
     .section h2 { font-size: 2rem; font-weight: 700; color: #ffffff; margin-bottom: 10px; }
     .section h2 span { color: #4f9ef8; }
     .divider { width: 60px; height: 4px; background: #4f9ef8; border-radius: 2px; margin-bottom: 40px; }
 
-    .skills-grid { display: flex; flex-wrap: wrap; gap: 15px; }
+    /* SKILLS */
+    .skills-grid { display: -webkit-flex; display: flex; flex-wrap: wrap; gap: 15px; }
     .skill-badge {
       background: #0d1526;
       border: 1px solid #4f9ef8;
@@ -66,34 +104,53 @@
       font-weight: 600;
     }
 
-    .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
+    /* PROJECTS */
+    .projects-grid {
+      display: -webkit-flex;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 25px;
+    }
     .project-card {
       background: #0d1526;
       border-radius: 12px;
       padding: 30px;
       border: 1px solid #1e3a5f;
+      -webkit-transition: -webkit-transform 0.3s, border-color 0.3s;
       transition: transform 0.3s, border-color 0.3s;
+      flex: 1 1 280px;
     }
-    .project-card:hover { transform: translateY(-5px); border-color: #4f9ef8; }
+    .project-card:hover { -webkit-transform: translateY(-5px); transform: translateY(-5px); border-color: #4f9ef8; }
     .project-card .icon { font-size: 2.5rem; margin-bottom: 15px; }
     .project-card h3 { font-size: 1.1rem; font-weight: 700; color: #ffffff; margin-bottom: 10px; }
     .project-card p { font-size: 0.9rem; color: #8899aa; line-height: 1.7; margin-bottom: 20px; }
 
-    .project-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
+    .project-tags { display: -webkit-flex; display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
     .tag { background: #070b14; color: #4f9ef8; padding: 4px 12px; border-radius: 4px; font-size: 0.8rem; }
 
-    .project-links { display: flex; gap: 10px; }
-    .project-links a { padding: 8px 16px; border-radius: 6px; font-size: 0.85rem; font-weight: 600; text-decoration: none; transition: all 0.3s; }
+    .project-links { display: -webkit-flex; display: flex; gap: 10px; flex-wrap: wrap; }
+    .project-links a {
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-decoration: none;
+      -webkit-transition: all 0.3s;
+      transition: all 0.3s;
+    }
     .link-demo { background: #4f9ef8; color: #070b14; }
     .link-demo:hover { background: #3a8de0; }
     .link-github { border: 1px solid #1e3a5f; color: #8899aa; }
     .link-github:hover { border-color: #4f9ef8; color: #4f9ef8; }
 
+    /* ABOUT */
     .about-section { background: #0d1526; }
-    .about-content { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+    .about-content { display: -webkit-flex; display: flex; flex-wrap: wrap; gap: 60px; align-items: center; }
+    .about-text { flex: 1 1 280px; }
     .about-text p { color: #8899aa; line-height: 1.9; font-size: 1rem; margin-bottom: 15px; }
-    .about-info { display: flex; flex-direction: column; gap: 15px; }
+    .about-info { display: -webkit-flex; display: flex; flex-direction: column; gap: 15px; flex: 1 1 280px; }
     .info-item {
+      display: -webkit-flex;
       display: flex;
       align-items: center;
       gap: 15px;
@@ -106,7 +163,8 @@
     .info-item .label { font-size: 0.8rem; color: #556677; }
     .info-item .value { font-size: 0.95rem; color: #ffffff; font-weight: 600; }
 
-    .contact-grid { display: flex; gap: 20px; flex-wrap: wrap; }
+    /* CONTACT */
+    .contact-grid { display: -webkit-flex; display: flex; gap: 20px; flex-wrap: wrap; }
     .contact-card {
       background: #0d1526;
       border-radius: 10px;
@@ -114,14 +172,15 @@
       text-align: center;
       border: 1px solid #1e3a5f;
       text-decoration: none;
+      -webkit-transition: border-color 0.3s, -webkit-transform 0.3s;
       transition: border-color 0.3s, transform 0.3s;
-      flex: 1;
-      min-width: 150px;
+      flex: 1 1 120px;
     }
-    .contact-card:hover { border-color: #4f9ef8; transform: translateY(-3px); }
+    .contact-card:hover { border-color: #4f9ef8; -webkit-transform: translateY(-3px); transform: translateY(-3px); }
     .contact-card .icon { font-size: 2rem; margin-bottom: 10px; }
     .contact-card p { color: #4f9ef8; font-weight: 600; font-size: 0.95rem; }
 
+    /* FOOTER */
     footer {
       text-align: center;
       padding: 30px;
@@ -132,12 +191,47 @@
     }
     footer span { color: #4f9ef8; }
 
+    /* ===== RESPONSIVE ===== */
+
+    /* Tablet */
+    @media (max-width: 1024px) {
+      nav { padding: 18px 30px; }
+      .section { padding: 60px 30px; }
+      .hero h1 { font-size: 2.4rem; }
+    }
+
+    /* Mobile */
     @media (max-width: 768px) {
       nav { padding: 15px 20px; }
-      nav ul { gap: 15px; }
-      .section { padding: 60px 20px; }
-      .hero h1 { font-size: 2rem; }
-      .about-content { grid-template-columns: 1fr; }
+      nav ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background: #0d1526;
+        padding: 20px;
+        gap: 15px;
+        border-bottom: 1px solid #1e3a5f;
+      }
+      nav ul.open { display: -webkit-flex; display: flex; }
+      .hamburger { display: -webkit-flex; display: flex; }
+      .hero { padding: 70px 20px; }
+      .hero h1 { font-size: 1.8rem; }
+      .hero p { font-size: 1rem; }
+      .section { padding: 50px 20px; }
+      .section h2 { font-size: 1.6rem; }
+      .project-card { flex: 1 1 100%; }
+      .contact-card { flex: 1 1 40%; padding: 20px; }
+    }
+
+    /* Small Mobile */
+    @media (max-width: 480px) {
+      .hero h1 { font-size: 1.5rem; }
+      .btn { padding: 10px 20px; font-size: 0.85rem; }
+      .contact-card { flex: 1 1 100%; }
+      .skill-badge { font-size: 0.8rem; padding: 6px 14px; }
     }
   </style>
 </head>
@@ -146,11 +240,16 @@
   <!-- NAV -->
   <nav>
     <div class="logo">Eng. Mohamed Samir</div>
-    <ul>
-      <li><a href="#about">About</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#contact">Contact</a></li>
+    <div class="hamburger" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <ul id="nav-menu">
+      <li><a href="#about" onclick="closeMenu()">About</a></li>
+      <li><a href="#skills" onclick="closeMenu()">Skills</a></li>
+      <li><a href="#projects" onclick="closeMenu()">Projects</a></li>
+      <li><a href="#contact" onclick="closeMenu()">Contact</a></li>
     </ul>
   </nav>
 
@@ -317,6 +416,25 @@
   <footer>
     <p>Designed & Built by <span>Mohamed Samir</span> — Data Analyst & Power BI Developer</p>
   </footer>
+
+  <!-- MOBILE MENU SCRIPT -->
+  <script>
+    function toggleMenu() {
+      var menu = document.getElementById('nav-menu');
+      menu.classList.toggle('open');
+    }
+    function closeMenu() {
+      var menu = document.getElementById('nav-menu');
+      menu.classList.remove('open');
+    }
+    // Close menu when clicking outside
+    document.addEventListener('click', function(e) {
+      var nav = document.querySelector('nav');
+      if (!nav.contains(e.target)) {
+        closeMenu();
+      }
+    });
+  </script>
 
 </body>
 </html>
